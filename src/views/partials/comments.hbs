@@ -1,0 +1,22 @@
+{{#if sidebar1.comments}}
+    <div class="card-header bg-dark text-white">
+        <h5><i class="fas fa-comment"></i> Comentarios recientes</h5>
+    </div>
+    <div class="card-body">
+        {{#each sidebar1.comments}}
+            <div class="row">
+                <div class="col">
+                    <a href="/images/{{image.filename}}"> <img src="../../public/uploads/{{image.filename}}" class="w-70 img-thumbnail"></a>
+                </div>
+                <div class="col">
+                    <blockquote class="w-100">
+                        <p>{{comment}}</p>
+                        <footer class="blockquote-footer">
+                            {{name}}, {{timeago timestamp}}
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
